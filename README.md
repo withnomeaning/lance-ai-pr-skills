@@ -1,109 +1,109 @@
-# AI 公关技能包
+# AI PR Skill Pack
 
-把公关行业的**判断逻辑、风险意识、执行流程**，编译成 AI 可重复调用的 Skill 文件。
+Turn PR **judgment logic, risk awareness, and execution workflows** into reusable AI Skill files.
 
-## 这是什么
+## What This Is
 
-一套面向品牌公关场景的 AI 决策与执行工具，包含 6 个 Claude Code Skill。它背后有一条核心假设：
+A set of 6 Claude Code Skills for brand PR scenarios, built on one core assumption:
 
-> PR 的本质是业务判断，不是表达。表达只是判断之后的动作。
+> PR is fundamentally business judgment, not expression. Expression is only the action that follows judgment.
 
-所以这套技能包不是 6 个孤立的写作模板，而是一条「分析 → 取舍 → 落地」的完整决策链：**5 个 Skill 做专项分析，1 个 Skill 做最终取舍**。
+So this isn't 6 standalone writing templates — it's a complete "analyze → decide → execute" decision chain: **5 Skills for specialized analysis, 1 Skill for the final call.**
 
-## 为什么做成 Skill 而不是提示词
+## Why Skills Instead of Prompts
 
-- 判断逻辑、风险意识、执行流程被固化成文件，不依赖临时记忆，可跨会话复用
-- 每次调用走同一套标准，结果可预期、可沉淀、可复盘
-- 专项 Skill 之间分工明确，避免「一个提示词干所有事」导致判断被稀释
+- Judgment logic, risk awareness, and execution workflows are locked into files, reusable across sessions without relying on memory
+- Every call follows the same standard, so results are predictable, accumulable, and reviewable
+- A clear division of labor between specialized Skills avoids diluting judgment by having "one prompt do everything"
 
-## 六个 Skill
+## The Six Skills
 
-### 1. 判断中枢 `judgment-hub` —— 最终取舍
+### 1. Judgment Hub `judgment-hub` — Final Call
 
-只负责判断「该做什么、不做什么、为什么」：
+Decides "what to do, what not to do, and why":
 
-- 要不要回应、发稿、延期
-- 要不要牺牲传播效果去保护信任
-- 要不要把外部舆情转成业务自查
-- 要不要把一个小的表达问题升级成战略问题
+- Whether to respond, publish, or delay
+- Whether to sacrifice communication impact to protect trust
+- Whether to turn external sentiment into an internal business review
+- Whether to escalate a seemingly small expression problem into a strategic issue
 
-当需要最终建议、优先级排序、危机回应决策、传播策略诊断、生意影响判断时使用。
+Use when you need a final recommendation, priority ranking, crisis-response decision, communication-strategy diagnosis, or business-impact judgment.
 
-### 2. 热点舆情研判 `hot-public-opinion-analysis` —— 专项
+### 2. Hot Public Opinion Analysis `hot-public-opinion-analysis` — Specialized
 
-把外部热点转成业务判断，每次回答四个问题：
+Turns external hot topics into business judgment. Answers four questions each time:
 
-- 它有没有从单点信息变成群体性意见
-- 它真正冒犯了谁，为什么能被放大
-- 接下来会升级、降温、反转，还是进入长期议题
-- 它和品牌信任、业务风险、公关资产有什么关系
+- Has it grown from a single piece of information into collective opinion?
+- Who does it actually offend, and why can it be amplified?
+- Will it escalate, cool down, reverse, or become a long-term issue?
+- How does it relate to brand trust, business risk, and PR assets?
 
-输出四段式：**是否成势 / 实质 / 走势 / 业务启示**，可直接转发给业务方。
+Outputs a four-part judgment: **gained momentum / substance / trajectory / business implications** — ready to forward to the business team.
 
-### 3. 媒体叙事拆解 `media-narrative-analysis` —— 专项
+### 3. Media Narrative Analysis `media-narrative-analysis` — Specialized
 
-读一篇稿子不是复述它写了什么，而是判断它在替谁建立什么认知：
+Reading a piece isn't summarizing what it says — it's judging whose perception it's building:
 
-- 这篇稿子的真实传播意图是什么
-- 它对本方有没有影响，影响哪类公关资产
-- 需要不应对、观察，还是进判断中枢拍板
+- What is the piece's real communication intent?
+- Does it affect us, and which PR assets does it hit?
+- Do we ignore, observe, or escalate to the Judgment Hub?
 
-输出结论先行的稿件分析，不做摘要搬运。
+Outputs a conclusion-first analysis, not a summary.
 
-### 4. 风险预案 `pr-contingency-plan` —— 专项
+### 4. PR Contingency Plan `pr-contingency-plan` — Specialized
 
-为即将上线的品牌、产品、内容、合作、代言、规则变更做风险摸排。预案不是追求零风险，而是在动作上线前，把可能消耗信任、引发误解、被对手放大、被媒体截图、被监管追问的点提前拆开。产出三样：
+Risk mapping for upcoming brand, product, content, partnership, spokesperson, or rule changes. A contingency plan isn't about zero risk — it's about unpacking, before launch, the points that could drain trust, cause misunderstanding, be amplified by rivals, be screenshotted by media, or be questioned by regulators. Produces three things:
 
-- 这次最可能被挑什么
-- 被挑时能公开署名怎么答
-- 上线前哪些必须改、必须备、只需看
+- What is most likely to be attacked
+- What to say publicly and on the record if attacked
+- What must be changed, prepared, or merely monitored before launch
 
-### 5. 文案公共语境审查 `copy-lens-review` —— 专项
+### 5. Copy Public-Context Review `copy-lens-review` — Specialized
 
-公共语境风险审查，不是创意审美评审。核心公式：
-
-```
-公共风险 = 语义歧义 × 群体敏感度 × 场景严肃度 × 截图传播性 × 解释成本
-```
-
-覆盖性别、家庭、节日、饭圈、弱势群体、宠物食品监管、截图传播、媒体放大等风险。输出三级结论：**通过 / 修改后可用 / 风险较高建议重写**。
-
-### 6. 新闻通稿 `press-release` —— 专项
-
-十类通稿（新车上市、车展活动、技术升级、战略合作、危机回应、新品发布、宠物公益、活动举办、专家观点、全年回顾）的起草与改稿。工作流：确认核心动作与传播目标 → MVP → 完整稿 → 终稿审查。默认党央媒 / 综合媒体硬新闻风格。
-
-## 协作流程
+Public-context risk review, not creative aesthetic review. Core formula:
 
 ```
-热点事件 ──→ 热点舆情研判 ──────┐
-单篇稿子 ──→ 媒体叙事拆解 ──────┤
-上线动作 ──→ 风险预案 ──────────┼──→ 判断中枢（最终取舍）
-文案物料 ──→ 文案公共语境审查 ──┤
-新闻发布 ──→ 新闻通稿 ──────────┘
+Public risk = semantic ambiguity × group sensitivity × scenario severity × screenshot shareability × explanation cost
 ```
 
-具体任务先走对应的专项 Skill，专项分析完后由判断中枢做综合取舍。
+Covers gender, family, holidays, fandom, vulnerable groups, pet-food regulation, screenshot spread, and media amplification risks. Outputs a three-level conclusion: **pass / usable after revision / high risk — rewrite recommended.**
 
-## 安装
+### 6. Press Release `press-release` — Specialized
 
-把整个目录放入 `~/.claude/skills/` 即可：
+Drafting and editing ten types of press releases (new car launch, auto show, tech/OTA upgrade, strategic partnership, crisis response, new product launch, pet welfare, event, expert view, year-in-review). Workflow: confirm the core action and communication goal → MVP → full draft → final review. Defaults to party/central-media hard-news style.
+
+## Workflow
+
+```
+Hot event ──────→ Hot Public Opinion Analysis ──┐
+Single piece ───→ Media Narrative Analysis ─────┤
+Upcoming action → PR Contingency Plan ──────────┼──→ Judgment Hub (final call)
+Copy material ──→ Copy Public-Context Review ───┤
+Press release ──→ Press Release ────────────────┘
+```
+
+Concrete tasks go through the matching specialized Skill first; the Judgment Hub makes the final call afterward.
+
+## Installation
+
+Place the whole directory into `~/.claude/skills/`:
 
 ```bash
 git clone https://github.com/withnomeaning/lance-ai-pr-skills.git
 cp -R lance-ai-pr-skills/{judgment-hub,hot-public-opinion-analysis,media-narrative-analysis,pr-contingency-plan,copy-lens-review,press-release} ~/.claude/skills/
 ```
 
-每个 Skill 通过 Claude Code 的 `/skill-name` 或自然语言触发。
+Each Skill is triggered via `/skill-name` in Claude Code or natural language.
 
-## 目录结构
+## Structure
 
 ```
-├── judgment-hub/                  判断中枢
-├── hot-public-opinion-analysis/   热点舆情研判
-├── media-narrative-analysis/      媒体叙事拆解
-├── pr-contingency-plan/           风险预案
-├── copy-lens-review/              文案公共语境审查
-└── press-release/                 新闻通稿
+├── judgment-hub/                  Judgment Hub
+├── hot-public-opinion-analysis/   Hot Public Opinion Analysis
+├── media-narrative-analysis/      Media Narrative Analysis
+├── pr-contingency-plan/           PR Contingency Plan
+├── copy-lens-review/              Copy Public-Context Review
+└── press-release/                 Press Release
 ```
 
-每个 Skill 目录内含 `SKILL.md`（核心定义）、`references/`（知识库）、`Test-Cases/`（测试用例）等。
+Each Skill directory contains `SKILL.md` (core definition), `references/` (knowledge base), `Test-Cases/` (test cases), etc.
